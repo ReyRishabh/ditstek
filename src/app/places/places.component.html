@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-12 placeCard" *ngFor="let place of allPlaces">
+            <div class="placeImage">
+                <img [src]="place.image">
+                <div class="buyNow" *ngIf="place.buyAvailable">
+                    <button class="btn btn-green" type="button">Buy Now</button>
+                </div>
+                <div class="price" *ngIf="place.buyAvailable">${{place.price}} / ton </div>
+                <div class="placeName">{{place.name}}</div>
+            </div>
+            <div class="placeInfo">
+                <h2>{{place.desc1}}</h2>
+                <h3>{{place.desc2}}</h3>
+                <p>{{place.desc3}}</p>
+            </div>
+        </div>
+    </div>
+</div>
